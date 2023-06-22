@@ -20,7 +20,9 @@
 #"output/weights/weight1.rds"
 
 # load in libraries
-source("code/packages.R")
+source("packages.R")
+# read in file paths
+source("setup_files_paths.R")
 
 #to do: 
 
@@ -29,8 +31,8 @@ source("code/packages.R")
 # Eligible practices: 907; sampled: 907.
 #read in files
 
-eligible_pats_by_gp <- readRDS("data/eligible_pats_by_gp.rds")
-sample_size_by_gp <- readRDS("data/sample_size_by_gp.rds")
+eligible_pats_by_gp <- readRDS(paste0(data_path,"eligible_pats_by_gp.rds"))
+sample_size_by_gp <- readRDS(paste0(data_path,"sample_size_by_gp.rds"))
 
 weight1 <- full_join(eligible_pats_by_gp,sample_size_by_gp,by = c("gp_prac_no"))
 #Divide the eligible patients by the sampled patients in each GP Practice to calculate the Weight 1 value.
@@ -52,11 +54,11 @@ weight1_sum <- weight1%>%
   summarise(gp_wt1 = sum(gp_wt1))
 
 #check if the same as before
-hist.file <- readRDS("data/weight1.rds")
+hist.file <- readRDS(paste0(output_path,"weight1.rds"))
 identical(hist.file,weight1)
-file.remove ("data/weight1.rds")
+file.remove (paste0(output_path,"weight1.rds"))
 
-saveRDS(weight1,"data/weight1.rds")
+saveRDS(weight1,paste0(output_path,"weight1.rds"))
 
 
 
