@@ -20,8 +20,8 @@
 #"output/weights/weight1.rds"
 getwd()
 lookup_path   <- if_else(substr(getwd(),2,5) == "conf","/conf/bss/pat-exp-surveys/health-and-care/training/lookups/","someothernetwork/lookups/")
-data_path     <- "/conf/bss/pat-exp-surveys/health-and-care/training/data/"
-output_path   <- "/conf/bss/pat-exp-surveys/health-and-care/training/output/"
+data_path     <- if_else(substr(getwd(),2,5) == "conf","/conf/bss/pat-exp-surveys/health-and-care/training/data/","someothernetwork/data/")
+output_path   <- if_else(substr(getwd(),2,5) == "conf","/conf/bss/pat-exp-surveys/health-and-care/training/output/","someothernetwork/output/")
 
 
 
