@@ -30,6 +30,7 @@ source("setup_files_paths.R")
 # Match sample size to eligible size
 # Eligible practices: 907; sampled: 907.
 #read in files
+#alter files to parquet
 
 eligible_pats_by_gp <- readRDS(paste0(data_path,"eligible_pats_by_gp.rds"))
 sample_size_by_gp <- readRDS(paste0(data_path,"sample_size_by_gp.rds"))
