@@ -47,6 +47,8 @@ range(weight1$gp_wt1)
 
 sd(weight1$gp_wt1)
 
+weight1$flag <- 1
+
 table(weight1$gp_wt1)
 
 
