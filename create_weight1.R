@@ -47,6 +47,8 @@ range(weight1$gp_wt1)
 
 sd(weight1$gp_wt1)
 
+table(weight1$gp_wt1)
+
 
 #maximum and mean rather higher than last time
 weight1_sum <- weight1%>%
