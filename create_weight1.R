@@ -49,6 +49,8 @@ sd(weight1$gp_wt1)
 
 weight1$flag <- 1
 
+table(weight1$gp_wt1)
+
 
 #maximum and mean rather higher than last time
 weight1_sum <- weight1%>%
